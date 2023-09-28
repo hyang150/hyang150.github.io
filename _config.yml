@@ -7,10 +7,11 @@
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Your Name / Site Title"
+title                    : "Hnanwen's personal Page"
 title_separator          : "-"
 name                     : &name "Hanwen Yang"
-description              : &description "personal description"
+description              : &description "Hi, This is Hanwen Yang and I am a current Computer science student from UCSC. Right now I am fousing on Machine Learning and 
+graduate program."
 url                      : https://hyang150.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "hyang150/hyang150.github.io"
@@ -80,10 +81,10 @@ analytics:
 
 # Site Author
 author:
-  name             : "Your Sidebar Name"
+  name             : "Hanwen Yang"
   avatar           : "profile.png"
   bio              : "Your biography for the left-hand sidebar"
-  location         : "Location"
+  location         : "Santa Cruz, California"
   employer         :
   pubmed           : "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
   googlescholar    : "http://yourfullgooglescholarurl.com"
