@@ -10,8 +10,8 @@ locale                   : "en-US"
 title                    : "Hnanwen's personal Page"
 title_separator          : "-"
 name                     : &name "Hanwen Yang"
-description              : &description "Hi, This is Hanwen Yang and I am a current Computer science student from UCSC. Right now I am fousing on Machine Learning and 
-graduate program."
+description              : &description "Hi, This is Hanwen Yang and I am a senior Computer science student from UCSC. Right now I am learning Machine Learning and Deep Learning. 
+I am planning go to graduate shcool after I finished my undergraduate learning."
 url                      : https://hyang150.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "hyang150/hyang150.github.io"
