@@ -11,15 +11,14 @@ locale                   : "en-US"
 title                    : "Hnanwen's personal Page"
 title_separator          : "-"
 name                     : &name "Hanwen Yang"
-description              : &description "Hi, I’m Hanwen Yang, currently a Master’s student in Computer Science at the University of Southern California. 
+description              : &description "Hi, I'm Hanwen Yang, currently a Master's student in Computer Science at the University of Southern California. 
 I recently graduated from UC Santa Cruz with degrees in Computer Science and Economics. 
 During my time there, I had the chance to work on a variety of interesting projects, 
 from predicting bus arrival times using machine learning to evaluating the math abilities of AI models like ChatGPT.
-I’m especially interested in AI and machine learning, 
-and I’ve worked with several different models and frameworks to explore how these technologies can solve real-world problems. 
-My technical skills include Python, C/C++, PyTorch, and a few other programming languages that I’ve picked up along the way.
-
-Recently, I’ve been focusing on reviewing the math behind machine learning. In my free time, I enjoy working out, taking photos, and singing.
+I'm especially interested in AI and machine learning, 
+and I've worked with several different models and frameworks to explore how these technologies can solve real-world problems. 
+My technical skills include Python, C/C++, PyTorch, and a few other programming languages that I've picked up along the way.
+Recently, I've been focusing on reviewing the math behind machine learning. In my free time, I enjoy working out, taking photos, and singing."
 url                      : https://hyang150.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "hyang150/hyang150.github.io"
