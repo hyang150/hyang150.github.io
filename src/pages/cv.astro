@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import TimeLineElement from "../components/cv/TimeLine.astro";
+import TimeLineElement from "../components/cv/TimeLineElement.astro";
 ---
 
 <BaseLayout title="Resume" sideBarActiveItemID="cv">
@@ -9,10 +9,7 @@ import TimeLineElement from "../components/cv/TimeLine.astro";
   </div>
 
   <div class="mb-10 text-justify">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-    aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-    aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-    cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    [cite_start]CS Master's student at USC with a strong background in NLP, Deep Learning, and AI[cite: 4, 5, 6]. [cite_start]Experienced in developing language models, NER systems, and multimodal retrieval pipelines[cite: 28, 44, 63]. [cite_start]Passionate about Trustworthy AI and Generative Models[cite: 21].
   </div>
 
   <div class="mb-5">
@@ -21,72 +18,91 @@ import TimeLineElement from "../components/cv/TimeLine.astro";
 
   <div class="time-line-container grid gap-4 mb-10">
     <TimeLineElement
-      title="Title Name"
-      subtitle="[start year] to [end year] at [Study Center Name], [City], [Country]"
-    />
+      title="Master of Science, Computer Science"
+      subtitle="Aug 2024 - Present at University of Southern California, Los Angeles, CA"
+    >
+      [cite_start]Relevant Coursework: Deep Learning, Algorithms, Artificial Intelligence, NLP, Databases, Robotics[cite: 4, 5, 6, 10].
+    </TimeLineElement>
     <TimeLineElement
-      title="Title Name"
-      subtitle="[start year] to [end year] at [Study Center Name], [City], [Country]"
-    />
+      title="Bachelor of Science, Computer Science & Bachelor of Arts, Economics"
+      subtitle="Sept 2020 - June 2024 at University of California, Santa Cruz"
+    >
+      Highest Honors in Computer Science; Dean's Award; [cite_start]University Honors, Cum laude[cite: 15].<br/>
+      [cite_start]Relevant Coursework: Data Structure and Algorithms, Intro to AI, Applied ML, Advanced NLP[cite: 13].
+    </TimeLineElement>
   </div>
 
   <div class="mb-5">
-    <div class="text-3xl w-full font-bold">Experience</div>
+    <div class="text-3xl w-full font-bold">Work Experience</div>
   </div>
 
   <div class="time-line-container mb-10">
     <TimeLineElement
-      title="Job Title at Project or Company Name"
-      subtitle="From [Start Date] to [End Date] at [Company], [City], [Country]"
+      title="Small Language Model Algorithm Intern"
+      subtitle="June 2025 - Aug 2025 at Rokid Glasses, Hangzhou, China"
     >
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
-    </TimeLineElement>
-    <TimeLineElement
-      title="Job Title at Project or Company Name"
-      subtitle="From [Start Date] to [End Date] at [Company], [City], [Country]"
-    >
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
-    </TimeLineElement>
-    <TimeLineElement
-      title="Job Title at Project or Company Name"
-      subtitle="From [Start Date] to [End Date] at [Company], [City], [Country]"
-    >
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
+      <ul class="list-disc mx-6 mb-2">
+        [cite_start]<li>Designed and delivered an end-to-end 30-language TTS generation and evaluation pipeline[cite: 28].</li>
+        [cite_start]<li>Combined FastText + LaBSE for language ID and integrated Coqui, Kokoro, and MMS TTS engines[cite: 29].</li>
+        [cite_start]<li>Implemented GPU batch concurrency and thread-safe model loading for optimization[cite: 30].</li>
+        [cite_start]<li>Built an automated quality evaluation system using Whisper-turbo, LaBSE, and MuSR[cite: 31, 32].</li>
+        [cite_start]<li>Constructed a multi-dimensional scoring suite (BLEU, chrF++, BERTScore, COMET) to guide model updates[cite: 36, 37].</li>
+      </ul>
     </TimeLineElement>
   </div>
 
   <div class="mb-5">
-    <div class="text-3xl w-full font-bold">Certifications</div>
+    <div class="text-3xl w-full font-bold">Research Experience</div>
   </div>
 
-  <ul class="list-disc mx-6 mb-10 grid gap-2">
-    <li>
-      <a href="#" target="_blank"> Certification Name (with link)</a>
-    </li>
-    <li>
-      <a href="#" target="_blank"> Certification Name (with link)</a>
-    </li>
-  </ul>
+  <div class="time-line-container mb-10">
+    <TimeLineElement
+      title="Named Entity Recognition Models (Graduate Research)"
+      subtitle="Feb 2025 - Mar 2025 at USC, Los Angeles, CA"
+    >
+      <ul class="list-disc mx-6 mb-2">
+        [cite_start]<li>Developed a BiLSTM NER model achieving 94.60% accuracy and 73.70% F1-score on CoNLL-2003[cite: 44, 45].</li>
+        [cite_start]<li>Enhanced architecture with 100-dim GloVe embeddings, boosting F1-score to 82.18%[cite: 46].</li>
+        [cite_start]<li>Implemented a BiLSTM + CNN hybrid model, achieving 96.64% accuracy and 85.95% F1-score[cite: 47, 48].</li>
+      </ul>
+    </TimeLineElement>
+    <TimeLineElement
+      title="Attention Bias Mitigation in LLMs (Graduate Research)"
+      subtitle="Sept 2024 - Dec 2024 at USC, Los Angeles, CA"
+    >
+      <ul class="list-disc mx-6 mb-2">
+        [cite_start]<li>Utilized fine-tuning and data augmentation on Qwen 2.5 0.5B model to mitigate attention biases[cite: 53].</li>
+        [cite_start]<li>Achieved 77.07% F1 Score on SQUAD and 62.04% on HotpotQA[cite: 56].</li>
+        [cite_start]<li>Implemented attention reweighting strategies inspired by PASTA method[cite: 57].</li>
+      </ul>
+    </TimeLineElement>
+    <TimeLineElement
+      title="Real Vision Question and Answer Dataset (Undergraduate Research)"
+      subtitle="Sept 2023 - Feb 2024 at UCSC, Santa Cruz, CA"
+    >
+      <ul class="list-disc mx-6 mb-2">
+        [cite_start]<li>Implemented a multimodal retrieval system leveraging GPT-4 and LangChain for agriculture and healthcare queries[cite: 63, 65].</li>
+        [cite_start]<li>Evaluated hallucinations in LLM outputs and highlighted areas for improvement in information accuracy[cite: 66].</li>
+      </ul>
+    </TimeLineElement>
+  </div>
 
   <div class="mb-5">
     <div class="text-3xl w-full font-bold">Skills</div>
   </div>
 
   <ul class="list-disc md:columns-5 columns-2 mx-6">
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
+    <li>Python</li>
+    <li>PyTorch</li>
+    <li>Tensorflow</li>
+    <li>Transformer</li>
+    <li>NLP</li>
+    <li>GenAI</li>
+    <li>Docker</li>
+    <li>AWS/GCP</li>
+    <li>Git</li>
+    <li>Pandas/Numpy</li>
+    <li>R/Stata</li>
+    <li>Computer Vision</li>
   </ul>
 </BaseLayout>
