@@ -1,16 +1,69 @@
-<div class="pb-12 mt-5">
-  <div class="text-xl py-1">Hey there 👋</div>
-  <div class="text-5xl font-bold">I'm Hanwen Yang</div>
-  <div class="text-3xl py-3 font-bold">CS Master Student at USC</div>
-  <div class="py-2">
-    <text class="text-lg">
-      I am a graduate student in Computer Science at the University of Southern California, specializing in <b>NLP, Deep Learning, and Trustworthy AI</b>. 
-      Previously, I interned at Rokid Glasses working on Small Language Models and TTS pipelines. 
-      I enjoy solving complex problems using Python, PyTorch, and Transformer architectures.
-    </text>
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import HorizontalCard from "../components/HorizontalCard.astro";
+import { getCollection } from "astro:content";
+import createSlug from "../lib/createSlug"
+
+const posts = (await getCollection("blog")).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+const last_posts = posts.slice(0, 3);
+---
+
+<BaseLayout sideBarActiveItemID="home">
+  <div class="pb-12 mt-5">
+    <div class="text-xl py-1">Hey there 👋</div>
+    <div class="text-5xl font-bold">I'm Hanwen Yang (杨翰文)</div>
+    <div class="text-3xl py-3 font-bold">CS Master Student at USC</div>
+    <div class="py-2">
+      <text class="text-lg">
+        I am a graduate student in Computer Science at the University of Southern California, specializing in <b>NLP, Deep Learning, and Trustworthy AI</b>. 
+        Previously, I interned at Rokid Glasses working on Small Language Models and TTS pipelines. 
+        I enjoy solving complex problems using Python, PyTorch, and Transformer architectures.
+      </text>
+    </div>
+    <div class="mt-8">
+      <a class="btn" href="https://www.linkedin.com/in/hwyang150" target="_blank"> Let's connect!</a>
+      <a href="/cv" class="btn btn-outline ml-5"> View CV </a>
+    </div>
   </div>
-  <div class="mt-8">
-    <a class="btn" href="https://www.linkedin.com/in/hwyang150" target="_blank"> Let's connect!</a>
-    <a href="/cv" class="btn btn-outline ml-5"> View CV </a>
+
+  <div>
+    <div class="text-3xl w-full font-bold mb-2">My Last Projects {"</>"}</div>
   </div>
-</div>
+
+  <HorizontalCard
+    title="Named Entity Recognition Models"
+    img="/post_img.webp"
+    desc="Developed a BiLSTM NER model achieving 94.60% accuracy on CoNLL-2003. Enhanced architecture with GloVe embeddings and CNN hybrid models."
+    url="#"
+    badge="NLP"
+  />
+  <div class="divider my-0"></div>
+  <HorizontalCard
+    title="Attention Bias Mitigation in LLMs"
+    img="/post_img.webp"
+    desc="Utilized fine-tuning and data augmentation on Qwen 2.5 to mitigate attention biases, achieving high F1 scores on SQUAD and HotpotQA."
+    url="#"
+    badge="LLM"
+  />
+
+  <div>
+    <div class="text-3xl w-full font-bold mb-5 mt-10">Latest from blog</div>
+  </div>
+
+  {
+    last_posts.map((post) => (
+      <>
+        <HorizontalCard
+          title={post.data.title}
+          img={post.data.heroImage}
+          desc={post.data.description}
+          url={"/blog/" + createSlug(post.data.title, post.slug)}
+          target="_self"
+          badge={post.data.badge}
+        />
+        <div class="divider my-0" />
+      </>
+    ))
+  }
+</BaseLayout>

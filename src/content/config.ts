@@ -1,36 +1,41 @@
 import { z, defineCollection } from "astro:content";
-const blogSchema = z.object({
+
+// 博客的规则（保持原样）
+const blogSchema = defineCollection({
+  schema: z.object({
     title: z.string(),
     description: z.string(),
     pubDate: z.coerce.date(),
-    updatedDate: z.string().optional(),
+    updatedDate: z.coerce.date().optional(),
     heroImage: z.string().optional(),
     badge: z.string().optional(),
-    tags: z.array(z.string()).refine(items => new Set(items).size === items.length, {
+    tags: z.array(z.string()).refine((items) => new Set(items).size === items.length, {
         message: 'tags must be unique',
     }).optional(),
+  }),
 });
 
-const storeSchema = z.object({
+// 摄影集（原 Store）的规则
+// 我们把所有价格相关的都改成了 .optional()
+const storeSchema = defineCollection({
+  schema: z.object({
     title: z.string(),
     description: z.string(),
-    custom_link_label: z.string(),
-    custom_link: z.string().optional(),
-    updatedDate: z.coerce.date(),
+    pubDate: z.coerce.date(),
+    updatedDate: z.coerce.date().optional(),
+    heroImage: z.string().optional(),
+    badge: z.string().optional(),
     pricing: z.string().optional(),
     oldPricing: z.string().optional(),
-    badge: z.string().optional(),
     checkoutUrl: z.string().optional(),
-    heroImage: z.string().optional(),
+    details: z.boolean().optional(),
+    custom_link_label: z.string().optional(),
+    custom_link: z.string().optional(),
+  }),
 });
 
-export type BlogSchema = z.infer<typeof blogSchema>;
-export type StoreSchema = z.infer<typeof storeSchema>;
-
-const blogCollection = defineCollection({ schema: blogSchema });
-const storeCollection = defineCollection({ schema: storeSchema });
-
+// 导出规则
 export const collections = {
-    'blog': blogCollection,
-    'store': storeCollection
-}
+  'blog': blogSchema,
+  'store': storeSchema,
+};

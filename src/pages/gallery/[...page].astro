@@ -1,9 +1,10 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import HorizontalShopItem from "../../components/HorizontalShopItem.astro";
+import HorizontalCard from "../../components/HorizontalCard.astro";
 import { getCollection } from "astro:content";
 
 export async function getStaticPaths({ paginate }) {
+  // 这里依然读取 'store' 里的数据（你的照片md文件），不用改
   const items = await getCollection("store");
   items.sort((a, b) => b.data.updatedDate.valueOf() - a.data.updatedDate.valueOf());
   return paginate(items, { pageSize: 10 });
@@ -11,24 +12,22 @@ export async function getStaticPaths({ paginate }) {
 const { page } = Astro.props;
 ---
 
-<BaseLayout title="Store" sideBarActiveItemID="store">
+<BaseLayout title="Gallery" sideBarActiveItemID="gallery">
+  <div class="mb-5">
+    <div class="text-3xl w-full font-bold">Photography Gallery</div>
+  </div>
+
   <ul>
     {
       page.data.map((item) => (
         <>
-          <HorizontalShopItem
+          <HorizontalCard
             title={item.data.title}
             img={item.data.heroImage}
             desc={item.data.description}
-            pricing={item.data.pricing}
-            oldPricing={item.data.oldPricing}
-            checkoutUrl={item.data.checkoutUrl}
             badge={item.data.badge}
-            details={item.data.details}
-            tags={item.data.tags}
-            url={"/store/" + item.slug}
-            custom_link={item.data.custom_link}
-            custom_link_label={item.data.custom_link_label}
+            url={"/gallery/" + item.slug}
+            target="_self"
           />
           <div class="divider my-0" />
         </>
